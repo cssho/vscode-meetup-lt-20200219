@@ -18,3 +18,5 @@ jobs:
     - uses: ncipollo/release-action@v1
       with:
         tag: latest
+        artifact: index.html
+        token: ${{ secrets.GITHUB_TOKEN }}
