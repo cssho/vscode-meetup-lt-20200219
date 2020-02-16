@@ -16,3 +16,5 @@ jobs:
     - run: npm install -g @marp-team/marp-cli
     - run: marp README.md -o index.html
     - uses: ncipollo/release-action@v1
+      with:
+        tag: latest
