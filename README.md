@@ -125,6 +125,23 @@ enum FilterType {
 
 ---
 
+## [SortBy](https://github.com/microsoft/azure-devops-extension-api/blob/master/src/Gallery/Gallery.ts#L1729-L1785)
+ソート順（ここだけVSCodeのソースでカバーしきれておらずAzure DevOpsの機能拡張向けAPIのソースを参照）
+
+```ts
+export enum SortByType {
+    Relevance = 0,　LastUpdatedDate = 1,
+    Title = 2,　Publisher = 3,
+    InstallCount = 4, PublishedDate = 5,
+    AverageRating = 6,　TrendingDaily = 7,
+    TrendingWeekly = 8,　TrendingMonthly = 9,
+    ReleaseDate = 10,　Author = 11,
+    WeightedRating = 12
+}
+```
+
+---
+
 ## Example
 
 ExtensionName(filterType=7)が `cssho.vscode-svgviewer` のアイテムの情報を統計情報を含めて(flags=0x100=256)取得するクエリ
@@ -171,12 +188,7 @@ accept: application/json;api-version=3.0-preview.1
 
 ---
 
-# どう使う？
-
----
-
-# 例えば
-VSCodeの機能拡張で今日のトレンドTOP5
+# VSCodeの機能拡張で今日のトレンドTOP5
 
 ```
 {
@@ -218,7 +230,22 @@ accept: application/json;api-version=3.0-preview.1
 
 ---
 
-という感じでランキング的なのも取れるので
-これをSlack等に定期的に垂れ流したり
-お気に入りの拡張の更新をウォッチしたり
-自分の作った拡張の統計データを日々集計してみたり
+## という感じでランキング的なのも取れるので
+Slack等に
+
+- 定期的にランキング垂れ流したり
+- お気に入りのExtensionの更新をウォッチしたり
+- 自分の作ったExtensionの統計データを日々集計してみたり
+
+---
+
+## 他の人より一足先に便利なExtensionを使いたいそこのあなた！
+## 是非このAPIを触ってみてください！
+
+---
+
+# 大事なことなのでもう一度言います
+
+---
+
+## [SVG Viewer](https://marketplace.visualstudio.com/items?itemName=cssho.vscode-svgviewer) のオーナー募集中！
