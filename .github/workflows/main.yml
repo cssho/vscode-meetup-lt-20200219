@@ -1,0 +1,22 @@
+name: export slide
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2.0.0
+    - uses: actions/setup-node@v1.1.0
+    - run: npm install -g @marp-team/marp-cli
+    - run: marp README.md -o index.html
+    - uses: ncipollo/release-action@v1
+      with:
+        tag: latest
+        artifact: index.html
+        token: ${{ secrets.GITHUB_TOKEN }}
