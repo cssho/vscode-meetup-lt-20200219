@@ -1,4 +1,4 @@
-name: export slide
+name: 'export slide'
 
 on:
   push:
