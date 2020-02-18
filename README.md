@@ -1,5 +1,6 @@
 ---
 marp: true
+theme: uncover
 ---
 
 # Extension(を検索するAPI)を使う
@@ -9,19 +10,14 @@ VS Code Meetup #3 - Extensionを使う編
 ---
 
 # 自己紹介
-![bg left:30% fit](images/profile.jpg)
 
 ## 佐藤 翔 (Sato Sho)
 
-![w:32 h:32](https://unpkg.com/simple-icons@latest/icons/twitter.svg) [cssho (@csshooo)](https://twitter.com/csshooo)
+![w:32 h:32](https://unpkg.com/simple-icons@latest/icons/twitter.svg) [cssho (@csshooo)](https://twitter.com/csshooo) / ![w:32 h:32](https://unpkg.com/simple-icons@latest/icons/github.svg) [cssho (Sho Sato)](https://github.com/cssho)
 
-![w:32 h:32](https://unpkg.com/simple-icons@latest/icons/github.svg) [cssho (Sho Sato)](https://github.com/cssho)
+### 所属: [株式会社ヒューマンテクノロジーズ](https://www.h-t.co.jp/)
 
-### 所属
-[株式会社ヒューマンテクノロジーズ](https://www.h-t.co.jp/)
-
-### 趣味
-猫とお酒
+### 趣味: 猫とお酒
 
 ---
 
@@ -33,10 +29,14 @@ Visual Studio Marketplaceのアイテム対象のバッジ表示サービス。
 
 [![](https://vsmarketplacebadge.apphb.com/version/cssho.vscode-svgviewer.svg)](https://marketplace.visualstudio.com/items?itemName=cssho.vscode-svgviewer) [![](https://vsmarketplacebadge.apphb.com/installs/cssho.vscode-svgviewer.svg)](https://marketplace.visualstudio.com/items?itemName=cssho.vscode-svgviewer) [![](https://vsmarketplacebadge.apphb.com/rating/cssho.vscode-svgviewer.svg)](https://marketplace.visualstudio.com/items?itemName=cssho.vscode-svgviewer)
 
-## [SVG Viewer](https://marketplace.visualstudio.com/items?itemName=cssho.vscode-svgviewer)
-SVGのプレビューやエクスポートができるVSCodeの機能拡張
+---
 
-**メンテナ募集中！というかまるっと管理してくれる人大募集！**
+## [SVG Viewer](https://marketplace.visualstudio.com/items?itemName=cssho.vscode-svgviewer)
+SVGのプレビューやエクスポートができる
+VSCodeの機能拡張
+
+**メンテナ募集中！**
+**というかまるっと管理してくれる人大募集！**
 
 ---
 
@@ -60,7 +60,7 @@ return this.requestService.request({
 
 ---
 
-# Visual Studio Marketplaceでも
+# Marketplaceでも
 ![w:700px](images/vsm.png)
 ![w:500px](images/devtool.png)
 
@@ -78,6 +78,8 @@ https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery
 
 ## HTTP Method
 `POST`
+
+---
 
 ## HTTP Header
 - Content-Type: `application/json`
@@ -112,14 +114,10 @@ enum Flags {
 
 ```ts
 enum FilterType {
-	Tag = 1,
-	ExtensionId = 4,
-	Category = 5,
-	ExtensionName = 7,
-	Target = 8,
-	Featured = 9,
-	SearchText = 10,
-	ExcludeWithFlags = 12
+	Tag = 1, ExtensionId = 4,
+	Category = 5, ExtensionName = 7,
+	Target = 8, Featured = 9,
+	SearchText = 10, ExcludeWithFlags = 12
 }
 ```
 
@@ -144,20 +142,16 @@ export enum SortByType {
 
 ## Example
 
-ExtensionName(filterType=7)が `cssho.vscode-svgviewer` のアイテムの情報を統計情報を含めて(flags=0x100=256)取得するクエリ
+ExtensionNameが `cssho.vscode-svgviewer` のアイテムの情報を統計情報を含めて取得するクエリ
 
 ```json
 {
-    "filters": [
-        {
-            "criteria": [
-                 {
-                    "filterType": 7,
+    "filters": [{
+            "criteria": [{
+                    "filterType": 7, // ExtensionNameが
                     "value": "cssho.vscode-svgviewer"
-                }
-            ]
-        }
-    ],
+            }]
+    }],
     "flags": 256
 }
 ```
@@ -192,18 +186,14 @@ accept: application/json;api-version=3.0-preview.1
 
 ```
 {
-    "filters": [
-        {
-            "criteria": [
-                {
+    "filters": [{
+            "criteria": [{
                     "filterType": 8, // ターゲット
                     "value": "Microsoft.VisualStudio.Code"
-                }
-            ],
+            }],
             "pageSize": 5, // 5件
             "sortBy": 7 // 今日のトレンド
-        }
-    ]
+    }]
 }
 ```
 
@@ -230,22 +220,21 @@ accept: application/json;api-version=3.0-preview.1
 
 ---
 
-## という感じでランキング的なのも取れるので
-Slack等に
+## という感じでランキング的<br>なのも取れるので
 
 - 定期的にランキング垂れ流したり
 - お気に入りのExtensionの更新をウォッチしたり
-- 自分の作ったExtensionの統計データを日々集計してみたり
+- 自分の作ったExtensionの統計データを集計してみたり
 
 ---
 
-## 他の人より一足先に便利なExtensionを使いたいそこのあなた！
-## 是非このAPIを触ってみてください！
+## 人より一足先に便利なExtensionを使いたいそこのあなた！
+## 是非このAPI触ってみてください！
 
 ---
 
-# 大事なことなのでもう一度言います
+# 最後に大事なことなのでもう一度言います
 
 ---
 
-## [SVG Viewer](https://marketplace.visualstudio.com/items?itemName=cssho.vscode-svgviewer) のオーナー募集中！
+# [SVG Viewer](https://marketplace.visualstudio.com/items?itemName=cssho.vscode-svgviewer)<br>のオーナー募集中！
