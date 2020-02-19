@@ -3,7 +3,7 @@ marp: true
 theme: uncover
 ---
 
-# Extension(を検索するAPI)を使う
+# Extension\(を検索するAPI\)を使う
 
 VS Code Meetup #3 - Extensionを使う編
 
@@ -225,6 +225,30 @@ accept: application/json;api-version=3.0-preview.1
 - 定期的にランキング垂れ流したり
 - お気に入りのExtensionの更新をウォッチしたり
 - 自分の作ったExtensionの統計データを集計してみたり
+
+---
+
+# ということでちゃちゃっと[Bot](https://gist.github.com/cssho/f5b5af53561f00616ec4c74d59a9a77d)<br>作ってみました
+
+Google Apps Script + Slack App
+
+---
+
+![](images/ranking.png)
+
+<!--
+/ranking daily
+/ranking weekly
+/ranking monthly
+-->
+
+---
+
+![](images/statics.png)
+
+<!--
+/statics cssho.vscode-svgviewer
+-->
 
 ---
 
