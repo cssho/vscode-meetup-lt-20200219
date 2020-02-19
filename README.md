@@ -234,7 +234,7 @@ Google Apps Script + Slack App
 
 ---
 
-![](images/ranking.png)
+![bg fit](images/ranking.png)
 
 <!--
 /ranking daily
@@ -242,9 +242,7 @@ Google Apps Script + Slack App
 /ranking monthly
 -->
 
----
-
-![](images/statics.png)
+![bg fit](images/statics.png)
 
 <!--
 /statics cssho.vscode-svgviewer
